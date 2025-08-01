@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <a href="/user">
+        <button>Go to user site</button>
+    </a>
+    <h1>Messages</h1>
+    
+    {{if .}}
+        <ul>
+            {{range $key, $value := .}}
+            <li>
+                {{ $value.User }}
+                {{ $value.Message }}
+                {{ $value.Id }}
+            </li>
+            {{end}}
+        </ul>
+    {{else}}
+        <p>No messages sad emoji</p>
+    {{end}}
+
+</body>
+</html>
